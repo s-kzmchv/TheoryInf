@@ -78,7 +78,8 @@ public class Probability {
             add(str.substring(i,i+1));
         }
 
-        div(characters_probability.size());
+       // div(characters_probability.size());
+        div(str.length());
     }
 
     public String makeString(int length) {
@@ -239,7 +240,7 @@ public class Probability {
         //   res.append(character.toString() + "\n" + probability.toString());
 
         for (int i = 0; i < characters_probability.size(); i++){
-            res.append(characters_probability.get(i).characters + "=" + characters_probability.get(i).probability + "; ");
+            res.append(characters_probability.get(i).characters + "=" + String.format("%.5f", characters_probability.get(i).probability) + "; ");
         }
 
         return res.toString();
