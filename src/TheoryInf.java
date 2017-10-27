@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Random;
 
 public class TheoryInf {
 
@@ -24,6 +22,11 @@ public class TheoryInf {
         Table tableFor3 = new Table(probability,3);
 
         System.out.println(tableFor3);
+
+        Table tableFor4 = new Table(probability,4);
+
+        System.out.println(tableFor4);
+
 
     }
 

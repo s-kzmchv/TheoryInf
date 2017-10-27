@@ -7,9 +7,7 @@ import static java.lang.Math.pow;
 
 public class Table {
     private int N = 0;
-    //private int n = 0;
     private double H = 0;
-    //private double Pe = 0;
     private Probability probability;
     private Map<Integer,Double> map = new LinkedHashMap<>();
 
@@ -36,7 +34,6 @@ public class Table {
     }
 
     public void  makeTable(int n){
-        //n -= 1;
         double n_div_N = 0;
         do{
             n--;

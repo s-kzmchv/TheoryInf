@@ -64,8 +64,7 @@ public class Probability {
 
         }
     }
-    //private ArrayList<Double> probability = new ArrayList<>();
-    //private ArrayList<String> characters = new ArrayList<>();
+
 
     private ArrayList<Elem> characters_probability = new ArrayList<>();
     private double H = 0;
@@ -78,7 +77,6 @@ public class Probability {
             add(str.substring(i,i+1));
         }
 
-       // div(characters_probability.size());
         div(str.length());
     }
 
@@ -118,24 +116,15 @@ public class Probability {
 
                 for( int j = 0; j < stringBuffer.length(); j++) {
                     String tmp = String.valueOf(stringBuffer.charAt(j));
-                    //double probability = this.probability.get(characters.indexOf(tmp));
                     Iterator<Elem> it = characters_probability.listIterator();
                     while (it.hasNext()) {
                         Elem tmpElem = it.next();
                         if (tmpElem.characters.equals(tmp)) {
                             probability *= tmpElem.probability;
                             break;
-                            //return;
                         }
                     }
                 }
-
-
-                /*double probability = characters_probability.get(characters_probability.indexOf(tmp)).probability;
-                for( int j = 1; j < stringBuffer.length(); j++){
-                    tmp = String.valueOf(stringBuffer.charAt(j));
-                    probability *= characters_probability.get(characters_probability.indexOf(tmp)).probability;
-                }*/
 
                 res.addBoth(stringBuffer.toString(),probability);
 
@@ -186,12 +175,6 @@ public class Probability {
     }
 
     public void div(int value){
-        /*for (int i = 0; i < characters_probability.size();i++){
-
-            probability.set(i,probability.get(i) / value);
-
-        }*/
-
 
         Iterator<Elem> it = characters_probability.listIterator();
         while (it.hasNext()){
@@ -236,8 +219,6 @@ public class Probability {
     public String toString()
     {
         StringBuilder res = new StringBuilder();
-
-        //   res.append(character.toString() + "\n" + probability.toString());
 
         for (int i = 0; i < characters_probability.size(); i++){
             res.append(characters_probability.get(i).characters + "=" + String.format("%.5f", characters_probability.get(i).probability) + "; ");
